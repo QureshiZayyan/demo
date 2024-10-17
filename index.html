@@ -15,32 +15,73 @@
 
     const data = [
       {
-        name: 'zayyan', age: 18, work: 'developer'
-        {
-          
-        }
-       }
+        name: 'zoheb',
+        age: 202,
+        work: 'advocate',
+        planList: [
+          { month: '3', amount: 2500, freeDays: '0', saving: 0 },
+          { month: '6', amount: 6000, freeDays: '15', saving: 500 },
+          { month: '12', amount: 8000, freeDays: '28', saving: 0 }
+        ]
       },
-      { name: 'zoheb', age: 202, work: 'advocate' },
-      { name: 'amaan', age: 58, work: 'enginerr' },
-      { name: 'zaid', age: 48, work: 'doctor' },
-    ]
+      {
+        name: 'zaid',
+        age: 48,
+        work: 'doctor',
+        planList: [
+          { month: '3', amount: 2500, freeDays: '0', saving: 0 },
+          { month: '6', amount: 6000, freeDays: '15', saving: 500 },
+          { month: '12', amount: 8000, freeDays: '28', saving: 0 }
+        ]
+      }
+    ];
 
-    data.forEach(element => {
+    console.log(data);
+    // console.log(data.planList);
+
+
+
+    data.forEach((element) => {
       let h3 = document.createElement('h3');
       let h2 = document.createElement('h2');
-      let p = document.createElement('p');
 
       h3.textContent = element.name;
       h2.textContent = element.age;
-      p.textContent = element.work;
 
       let container = document.querySelector('.container');
       container.append(h3);
       container.append(h2);
-      container.append(p);
+
+      element.planList.forEach((e, index) => {
+        if (e.amount) {
+          let p = document.createElement('p');
+          p.textContent = e.amount;
+          container.append(p);
+        }
+        else if (e.amount !== index) {
+          p.textContent = 'hey'
+        }
+      })
+      // let p = document.createElement('p');
+      // p.textContent = element.planList[0].amount;
+      // container.append(p)
     });
 
+
+    // function a() {
+    //   if(da)
+    //   data.planList.forEach(element => {
+
+    //     let h2 = document.createElement('h2');
+
+    //     h2.textContent = element.amount;
+
+    //     let container = document.querySelector('.container');
+    //     container.append(h2);
+    //   });
+    // }
+
+    // a()
     //   try {
     //     const data = await fetch('http://103.123.45.76:9444/api/plan/getAll');
     //     const response = await data.json(); // Assuming response is an array of objects
