@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container"></div>
+
+  <script>
+
+    const data = [
+      {
+        name: 'zayyan', age: 18, work: 'developer'
+        {
+          
+        }
+       }
+      },
+      { name: 'zoheb', age: 202, work: 'advocate' },
+      { name: 'amaan', age: 58, work: 'enginerr' },
+      { name: 'zaid', age: 48, work: 'doctor' },
+    ]
+
+    data.forEach(element => {
+      let h3 = document.createElement('h3');
+      let h2 = document.createElement('h2');
+      let p = document.createElement('p');
+
+      h3.textContent = element.name;
+      h2.textContent = element.age;
+      p.textContent = element.work;
+
+      let container = document.querySelector('.container');
+      container.append(h3);
+      container.append(h2);
+      container.append(p);
+    });
+
+    //   try {
+    //     const data = await fetch('http://103.123.45.76:9444/api/plan/getAll');
+    //     const response = await data.json(); // Assuming response is an array of objects
+    //     console.log(response);
+    //     // AddingData(response)
+
+    //     response.forEach((element, index) => {
+    //       console.log(`the plan name is, ${element.planList[index].amount}`);
+    //     });
+
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
+
+    // function AddingData(response) {
+    //   response.forEach((element) => {
+    //     let data = response.planList;
+    //     data.forEach(plan => {
+    //       let price = document.createElement('div');
+    //       price.textContent =
+    //         document.querySelector('.container').append(price);
+    //     });
+    //   });
+
+    // fetchdata();
+
+
+  </script>
+</body>
+
+</html>
